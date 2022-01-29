@@ -1,0 +1,23 @@
+domain: vaughanross.io
+layout:
+- ansible.sdk.operatorframework.io/v1
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: ontap-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: vaughanross.io
+  group: ontap
+  kind: Volume
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: vaughanross.io
+  group: ontap
+  kind: StorageVirtualMachine
+  version: v1alpha1
+version: "3"

@@ -1,0 +1,19 @@
+---
+# Use the 'create api' subcommand to add watches to this file.
+- version: v1alpha1
+  group: ontap.vaughanross.io
+  kind: Volume
+  role: volume
+  finalizer:
+    name: ontap.vaughanross.io/finalizer
+    vars:
+      state: absent
+- version: v1alpha1
+  group: ontap.vaughanross.io
+  kind: StorageVirtualMachine
+  role: storagevirtualmachine
+  finalizer:
+    name: ontap.vaughanross.io/finalizer
+    vars:
+      state: absent
+#+kubebuilder:scaffold:watch

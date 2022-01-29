@@ -1,0 +1,18 @@
+---
+# tasks file for Volume
+- name: Create FlexVol
+  na_ontap_volume:
+    state: "{{ state }}"
+    name: "{{ vol_name }}"
+    aggregate_name: "{{ aggr_name }}"
+    size: "{{ size }}"
+    size_unit: "{{ size_unit }}"
+    space_guarantee: "{{ space_guarantee }}"
+    policy: "{{ policy }}"
+    vserver: "{{ vserver }}"
+    wait_for_completion: True
+    hostname: "{{ netapp_hostname }}"
+    username: "{{ lookup('file', '/etc/ontap-credentials/netapp_username') }}"
+    password: "{{ lookup('file', '/etc/ontap-credentials/netapp_password') }}"
+    https: "{{ https_enabled }}"
+    validate_certs: "{{ validate_certs }}"

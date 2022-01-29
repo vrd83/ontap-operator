@@ -1,0 +1,16 @@
+apiVersion: ontap.vaughanross.io/v1alpha1
+kind: Volume
+metadata:
+  name: volume01
+spec:
+  state: present
+  vol_name: volume01
+  aggr_name: ontap_sim_01_FC_1
+  size: 2
+  size_unit: gb
+  space_guarantee: none
+  policy: default
+  vserver: nfs-svm
+  netapp_hostname: 192.168.2.201
+  https_enabled: true
+  validate_certs: no

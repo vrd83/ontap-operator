@@ -1,0 +1,19 @@
+---
+# tasks file for StorageVirtualMachine
+- name: Create SVM
+  netapp.ontap.na_ontap_svm:
+    state: "{{ state }}"
+    name: "{{ svm_name }}"
+    services:
+      cifs:
+        allowed: "{{ cifs_allowed }}"
+      fcp:
+        allowed: "{{ fcp_allowed }}"
+      nfs:
+        allowed: "{{ nfs_allowed }}"
+        enabled: "{{ nfs_enabled }}"
+    hostname: "{{ netapp_hostname }}"
+    username: "{{ lookup('file', '/etc/ontap-credentials/netapp_username') }}"
+    password: "{{ lookup('file', '/etc/ontap-credentials/netapp_password') }}"
+    https: "{{ https_enabled }}"
+    validate_certs: "{{ validate_certs }}"

@@ -1,0 +1,14 @@
+apiVersion: ontap.vaughanross.io/v1alpha1
+kind: StorageVirtualMachine
+metadata:
+  name: nfs-svm
+spec:
+  state: present
+  svm_name: nfs-svm
+  cifs_allowed: false
+  fcp_allowed: false
+  nfs_allowed: true
+  nfs_enabled: true
+  netapp_hostname: 192.168.2.201
+  https_enabled: true
+  validate_certs: no

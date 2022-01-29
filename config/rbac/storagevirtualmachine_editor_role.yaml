@@ -1,0 +1,24 @@
+# permissions for end users to edit storagevirtualmachines.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: storagevirtualmachine-editor-role
+rules:
+- apiGroups:
+  - ontap.vaughanross.io
+  resources:
+  - storagevirtualmachines
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ontap.vaughanross.io
+  resources:
+  - storagevirtualmachines/status
+  verbs:
+  - get
